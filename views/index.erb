@@ -1,0 +1,11 @@
+<% if @survey.any?() %>
+  <% @survey.each() do |survey| %>
+  <li><%= survey.name %> <a href="/survey/<%= survey.id() %>/delete">delete</a> <a href="/survey/<%= survey.id() %>/edit">Edit</a></li> 
+  <% end %>
+<% end %>
+
+<h1>Survey</h1>
+
+<ul>
+  <li><a href="/create">Create a New Survey</a></li>
+</ul>

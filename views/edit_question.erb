@@ -1,0 +1,10 @@
+<h1>Edit Question: <%=@question.question %></h1>
+
+<form action="/question/<%= @question.id()%>/edit_question">
+  <label for="edit_question">Edit Question</label>
+  <input type="text" name="edit_question">
+  <button type="submit">Edit</button>
+</form>
+
+
+<a href="/"></a>
