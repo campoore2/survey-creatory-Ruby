@@ -1,6 +1,6 @@
 <% if @survey.any?() %>
   <% @survey.each() do |survey| %>
-  <li><%= survey.name %> <a href="/survey/<%= survey.id() %>/delete">delete</a> <a href="/survey/<%= survey.id() %>/edit">Edit</a></li> 
+  <li><%= survey.name %> <a href="/survey/<%= survey.id() %>/delete">delete</a> <a href="/survey/<%= survey.id() %>/edit">Add question</a></li> 
   <% end %>
 <% end %>
 

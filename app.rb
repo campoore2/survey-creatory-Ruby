@@ -41,10 +41,10 @@ end
 post('/survey/:id/edit') do
   question = params.fetch("add_question")
   survey_id = params.fetch("id").to_i()
-  @question = Question.create({:question => question, :survey_id => survey_id})
+  question_type = params.fetch('question_type').to_i()
+  @question = Question.create({:question => question, :survey_id => survey_id, :question_type => question_type})
   @survey = Survey.find(survey_id)
-  @question = @survey.question
-  erb(:edit)
+  erb(:question_form)
 end
 
 get('/question/:id/:question_id/delete') do
@@ -53,7 +53,7 @@ get('/question/:id/:question_id/delete') do
   question_to_delete = Question.find(question_id)
   Question.delete(question_to_delete)
   @survey = Survey.find(id)
-  @question = @survey.question
+  @question = @survey.question()
   erb(:edit)
 end
 

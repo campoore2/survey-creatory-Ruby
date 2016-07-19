@@ -2,8 +2,13 @@
 
 <form action="/survey/<%= @survey.id() %>/edit" method="post">
   <label for="add_question">Add a Question</label>
-  <input type="text" name="add_question">
+  <input type="text" name="add_question" required>
   <button type="submit">Add!</button>
+  <select required name="question_type">
+    <option value=1 >mulitple choice</option>
+    <option value=2 >short answer</option>
+    <option value=3 >check boxes</option>
+  </select>
 </form>
 
 <% if @question.any?() %>
